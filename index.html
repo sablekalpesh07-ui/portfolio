@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kalpesh sable — Portfolio</title>
+  <meta name="description" content="Personal portfolio of Kalpesh sable, Computer Science student & aspiring full-stack developer." />
+  <!-- Favicon (inline SVG as data URI) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234F46E5'/><text y='.9em' font-size='70' x='12'>AR</text></svg>" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════ LOADER ═══════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-text">Kalpesh sable</span>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-mark">KS</span>
+      <span class="logo-name">Kalpesh sable</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"      class="nav-link active" data-page="home">Home</a></li>
+      <li><a href="#about"     class="nav-link"        data-page="about">About</a></li>
+      <li><a href="#skills"    class="nav-link"        data-page="skills">Skills</a></li>
+      <li><a href="#projects"  class="nav-link"        data-page="projects">Projects</a></li>
+      <li><a href="#education" class="nav-link"        data-page="education">Education</a></li>
+      <li><a href="#contact"   class="nav-link"        data-page="contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+      <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════ PAGES WRAPPER ═══════════════════════ -->
+  <main id="pagesWrapper">
+
+    <!-- ──────────── PAGE: HOME ──────────── -->
+    <section id="home" class="page page--active">
+      <div class="hero-bg">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow" data-aos="fade-up" data-aos-delay="100">
+          <span class="dot"></span> Available for opportunities
+        </p>
+        <h1 class="hero-name" data-aos="fade-up" data-aos-delay="200">
+          Hi, I'm <em>Kalpesh sable</em>
+        </h1>
+        <h2 class="hero-typing" data-aos="fade-up" data-aos-delay="300">
+          I build <span id="typingText"></span><span class="cursor">|</span>
+        </h2>
+        <p class="hero-sub" data-aos="fade-up" data-aos-delay="400">
+          CS student at ADYPU · Full-Stack Dev · Open-Source Contributor<br>
+          Turning ideas into elegant digital experiences.
+        </p>
+        <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+          <button class="btn btn--primary" onclick="navigateTo('projects')">
+            View My Work <i class="fas fa-arrow-right"></i>
+          </button>
+          <button class="btn btn--ghost" onclick="navigateTo('contact')">
+            Let's Talk
+          </button>
+          <a href="images/Resume(Kalpesh_sable).pdf" class="btn btn--outline" download>
+            <i class="fas fa-download"></i> Resume
+          </a>
+        </div>
+        <div class="hero-socials" data-aos="fade-up" data-aos-delay="600">
+          <a href="https://github.com/dashboard" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/feed/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/home" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+  
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ──────────── PAGE: ABOUT ──────────── -->
+    <section id="about" class="page">
+      <div class="page-header" data-aos="fade-up">
+        <span class="page-label">01 / About</span>
+        <h2 class="page-title">The Person<br><em>Behind the Code</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-wrap" data-aos="fade-right" data-aos-delay="100">
+          <div class="about-photo">
+            <div class="photo-placeholder">
+              <i class="fas fa-user"></i>
+              <span><img src="images/WhatsApp Image 2026-03-26 at 10.54.49 PM - Copy.jpeg" alt="Kalpesh Sable"></span>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">1+</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">5</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+          <p class="about-greeting">Nice to meet you! 👋</p>
+         Hey! I’m <strong>Kalpesh Sable</strong> 👨‍💻
+A passionate developer who loves turning ideas into functional and interactive digital products.
+
+I work with technologies like HTML, CSS, and JavaScript to create clean and responsive web interfaces. I also enjoy participating in hackathons where I can solve problems under pressure and learn new tools quickly.
+
+
+
+          <h3 class="about-goals-title">Career Goals</h3>
+          <p> I aim to grow as a full-stack developer, continuously learning new technologies and building innovative solutions that have real-world impact..</p>
+
+          <div class="personality-chips">
+            <span class="chip"><i class="fas fa-bolt"></i> Fast Learner</span>
+            <span class="chip"><i class="fas fa-users"></i> Team Player</span>
+            <span class="chip"><i class="fas fa-lightbulb"></i> Creative Problem-Solver</span>
+            <span class="chip"><i class="fas fa-code-branch"></i> Open-Source Advocate</span>
+            <span class="chip"><i class="fas fa-heart"></i> Design Enthusiast</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────── PAGE: SKILLS ──────────── -->
+    <section id="skills" class="page">
+      <div class="page-header" data-aos="fade-up">
+        <span class="page-label">02 / Skills</span>
+        <h2 class="page-title">Tools &amp;<br><em>Technologies</em></h2>
+      </div>
+      <div class="skills-layout">
+        <!-- Technical Skills -->
+        <div class="skills-col" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="skills-col-title">Technical Skills</h3>
+          <div class="skill-bar-list">
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name"><i class="fab fa-react"></i> React</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name"><i class="fas fa-database"></i> SQL / PostgreSQL</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="skill-pct">78%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-meta">
+                <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS / Tailwind</span>
+                <span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-track"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="skills-col" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="skills-col-title">Tools &amp; Platforms</h3>
+          <div class="tools-grid">
+            <div class="tool-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="tool-card"><i class="fab fa-docker"></i><span>Docker</span></div>
+            <div class="tool-card"><i class="fab fa-aws"></i><span>AWS</span></div>
+            <div class="tool-card"><i class="fab fa-figma"></i><span>Figma</span></div>
+            <div class="tool-card"><i class="fas fa-fire"></i><span>Firebase</span></div>
+            <div class="tool-card"><i class="fab fa-linux"></i><span>Linux</span></div>
+            <div class="tool-card"><i class="fas fa-vial"></i><span>Jest</span></div>
+            <div class="tool-card"><i class="fas fa-infinity"></i><span>CI/CD</span></div>
+          </div>
+
+          <h3 class="skills-col-title" style="margin-top:2rem;">Soft Skills</h3>
+          <div class="soft-skills">
+            <div class="soft-item">
+              <div class="soft-ring" data-val="95">
+                <svg viewBox="0 0 60 60"><circle class="bg" cx="30" cy="30" r="24"/><circle class="fg" cx="30" cy="30" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"/></svg>
+                <span class="soft-pct">95%</span>
+              </div>
+              <p>Communication</p>
+            </div>
+            <div class="soft-item">
+              <div class="soft-ring" data-val="90">
+                <svg viewBox="0 0 60 60"><circle class="bg" cx="30" cy="30" r="24"/><circle class="fg" cx="30" cy="30" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"/></svg>
+                <span class="soft-pct">90%</span>
+              </div>
+              <p>Teamwork</p>
+            </div>
+            <div class="soft-item">
+              <div class="soft-ring" data-val="85">
+                <svg viewBox="0 0 60 60"><circle class="bg" cx="30" cy="30" r="24"/><circle class="fg" cx="30" cy="30" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"/></svg>
+                <span class="soft-pct">85%</span>
+              </div>
+              <p>Problem Solving</p>
+            </div>
+            <div class="soft-item">
+              <div class="soft-ring" data-val="88">
+                <svg viewBox="0 0 60 60"><circle class="bg" cx="30" cy="30" r="24"/><circle class="fg" cx="30" cy="30" r="24" stroke-dasharray="150.8" stroke-dashoffset="150.8"/></svg>
+                <span class="soft-pct">88%</span>
+              </div>
+              <p>Leadership</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────── PAGE: PROJECTS ──────────── -->
+    <section id="projects" class="page">
+      <div class="page-header" data-aos="fade-up">
+        <span class="page-label">03 / Projects</span>
+        <h2 class="page-title">Things I've<br><em>Built</em></h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="--hue:230">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://hotel-booking-system-8xru.onrender.com/" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/sablekalpesh07-ui/hotel-booking-system" class="overlay-btn overlay-btn--ghost"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag"></span>
+            <h3 class="project-title">Hotel management system</h3>
+            <p class="project-desc">Hotel Management System is a web-based application developed to simplify and automate hotel operations such as room booking, customer management, and record handling. The system provides an efficient interface for managing reservations, check-ins, check-outs, and customer details.</p>
+            <div class="project-stack">
+              <span>JavaScript</span><span>HTML</span><span>CSS</span><span>React</span><span>mongodb</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-img">
+            <div class="project-img-placeholder" style="--hue:160">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="overlay-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="#" class="overlay-btn overlay-btn--ghost"><i class="fab fa-github"></i> Source</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag"></span>
+            <h3 class="project-title">portfolio website</h3>
+            <p class="project-desc">Portfolio Website is a personal web application designed to showcase my skills, projects, and achievements in a clean and professional manner. The website features a modern UI with smooth navigation and responsive design, ensuring a seamless experience across all devices. .</p>
+            <div class="project-stack">
+              <span>html</span><span>css</span><span>javascript</span><span>node.js</span>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+    </section>
+
+    <!-- ──────────── PAGE: EDUCATION ──────────── -->
+    <section id="education" class="page">
+      <div class="page-header" data-aos="fade-up">
+        <span class="page-label">04 / Education</span>
+        <h2 class="page-title">Academic<br><em>Journey</em></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 </span>
+            <h3>CBSE BOARD (SSC)</h3>
+            <h4>CHHTRAPATI SAMBHAJINAGR,MAHARASHTRA</h4>
+            <p>Completed SSC with a strong academic record, developing discipline, consistency, and fundamental knowledge across subjects.</p>
+            
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="timeline-dot"><i class="fas fa-award"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025</span>
+            <h3>MAHARASHTRA STATE BOARD(HSC)</h3>
+            <h4>Chhtrapati Sambhajinagar, Maharashtra</h4>
+            <p> Completed HSC with a focus on core subjects related to my field, building a strong academic foundation and analytical skills.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025-present</span>
+            <h3>B-TECH CSE(CFIS)</h3>
+            <h4>ADYPU,PUNE</h4>
+            <p>Currently pursuing my B.Tech degree with a focus on developing strong technical knowledge and practical skills in my field. Actively participating in academic and co-curricular activities to enhance my overall learning.</p>
+          </div>
+        </div>
+
+      
+
+      </div>
+    </section>
+
+    <!-- ──────────── PAGE: CONTACT ──────────── -->
+    <section id="contact" class="page">
+      <div class="page-header" data-aos="fade-up">
+        <span class="page-label">05 / Contact</span>
+        <h2 class="page-title">Let's Build<br><em>Something Great</em></h2>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info" data-aos="fade-right" data-aos-delay="100">
+          <p class="contact-intro">I'm always open to new opportunities, collaborations, or just a friendly chat about tech. Drop me a message and I'll get back within 24 hours.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="kalpeshssable@gmail.com">kalpeshssable@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <span class="contact-label">Location</span>
+                <span>pune, Maharashtra, India</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="contact-label">Phone</span>
+                <a href="tel:+918390527701">+91 8390527701</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="https://github.com/dashboard" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/feed/" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/home" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form" novalidate data-aos="fade-left" data-aos-delay="200">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="kalpesh" required />
+              <span class="form-error" id="fnameErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Sable" required />
+              <span class="form-error" id="lnameErr"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="kalpeshssable@gmail.com" required />
+            <span class="form-error" id="emailErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Let's collaborate on..." required />
+            <span class="form-error" id="subjectErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+            <span class="form-error" id="messageErr"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">
+            <span class="btn-text">Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <div id="formSuccess" class="form-success" style="display:none;">
+            <i class="fas fa-check-circle"></i> Message sent! I'll reply soon.
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-mark">KS</span>
+        <span>Kalpesh Sable</span>
+      </div>
+      <p class="footer-copy">Crafted with <i class="fas fa-heart"></i> &amp; lots of <i class="fas fa-mug-hot"></i> &copy; <span id="footerYear"></span> Kalpesh Sable. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/dashboard" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/feed/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://x.com/home" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

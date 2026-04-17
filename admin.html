@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — AR Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234F46E5'/><text y='.9em' font-size='70' x='12'>AR</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ══════════ LOGIN SCREEN ══════════ -->
+  <div id="loginScreen">
+    <div class="login-bg">
+      <div class="login-orb orb-a"></div>
+      <div class="login-orb orb-b"></div>
+      <div class="login-grid"></div>
+    </div>
+    <div class="login-card">
+      <div class="login-logo">
+        <span class="logo-mark">KS</span>
+        <div>
+          <p class="login-site">kalpesh sable</p>
+          <p class="login-sub">Admin Dashboard</p>
+        </div>
+      </div>
+      <h2 class="login-title">Welcome Back</h2>
+      <p class="login-hint">Enter your credentials to manage messages.</p>
+      <form id="loginForm" novalidate>
+        <div class="lf-group">
+          <label><i class="fas fa-user"></i> Username</label>
+          <input type="text" id="loginUser" placeholder="admin" autocomplete="username" />
+        </div>
+        <div class="lf-group">
+          <label><i class="fas fa-lock"></i> Password</label>
+          <div class="pw-wrap">
+            <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password" />
+            <button type="button" class="pw-toggle" id="pwToggle"><i class="fas fa-eye"></i></button>
+          </div>
+        </div>
+        <p id="loginError" class="login-error"></p>
+        <button type="submit" class="btn-login">
+          <span id="loginBtnText">Sign In</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+      <p class="login-demo">Demo: <code>admin</code> / <code>admin123</code></p>
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+  </div>
+
+  <!-- ══════════ DASHBOARD ══════════ -->
+  <div id="dashboard" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sb-header">
+        <span class="logo-mark">KS</span>
+        <div class="sb-site">
+          <p class="sb-name">kalpesh sable</p>
+          <p class="sb-role">Portfolio Admin</p>
+        </div>
+        <button class="sb-close" id="sidebarClose"><i class="fas fa-times"></i></button>
+      </div>
+
+      <nav class="sb-nav">
+        <p class="sb-section-label">Main</p>
+        <button class="sb-link active" data-view="inbox">
+          <i class="fas fa-inbox"></i> Inbox
+          <span class="badge" id="unreadBadge">0</span>
+        </button>
+        <button class="sb-link" data-view="starred">
+          <i class="fas fa-star"></i> Starred
+        </button>
+        <button class="sb-link" data-view="replied">
+          <i class="fas fa-reply"></i> Replied
+        </button>
+        <button class="sb-link" data-view="trash">
+          <i class="fas fa-trash"></i> Trash
+        </button>
+        <p class="sb-section-label">Settings</p>
+        <button class="sb-link" data-view="settings">
+          <i class="fas fa-cog"></i> Settings
+        </button>
+      </nav>
+
+      <div class="sb-footer">
+        <button class="sb-link" id="logoutBtn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+        <a href="index.html" class="sb-link" target="_blank">
+          <i class="fas fa-external-link-alt"></i> View Site
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+
+      <!-- Topbar -->
+      <header id="topbar">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="topbar-title" id="topbarTitle">Inbox</div>
+        <div class="topbar-right">
+          <div class="search-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search messages…" />
+          </div>
+          <button class="theme-btn" id="adminTheme"><i class="fas fa-sun"></i></button>
+          <div class="admin-avatar">
+            <span>A</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ── VIEW: INBOX / STARRED / REPLIED / TRASH ── -->
+      <div id="viewMessages" class="view active-view">
+        <!-- Stats row -->
+        <div class="stats-row" id="statsRow">
+          <div class="stat-card">
+            <div class="stat-icon" style="--c:#6366f1"><i class="fas fa-envelope"></i></div>
+            <div><p class="stat-val" id="statTotal">0</p><p class="stat-lbl">Total</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="--c:#f5a623"><i class="fas fa-circle-dot"></i></div>
+            <div><p class="stat-val" id="statUnread">0</p><p class="stat-lbl">Unread</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="--c:#22c55e"><i class="fas fa-reply"></i></div>
+            <div><p class="stat-val" id="statReplied">0</p><p class="stat-lbl">Replied</p></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" style="--c:#ec4899"><i class="fas fa-star"></i></div>
+            <div><p class="stat-val" id="statStarred">0</p><p class="stat-lbl">Starred</p></div>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="msg-toolbar">
+          <div class="filter-tabs" id="filterTabs">
+            <button class="ftab active" data-filter="all">All</button>
+            <button class="ftab" data-filter="unread">Unread</button>
+            <button class="ftab" data-filter="read">Read</button>
+          </div>
+          <div class="toolbar-actions">
+            <button class="action-btn" id="markAllRead" title="Mark all as read">
+              <i class="fas fa-check-double"></i> Mark All Read
+            </button>
+            <button class="action-btn action-btn--danger" id="clearTrashBtn" style="display:none;" title="Empty trash">
+              <i class="fas fa-fire"></i> Empty Trash
+            </button>
+          </div>
+        </div>
+
+        <!-- Message list -->
+        <div class="msg-list" id="msgList">
+          <!-- injected by JS -->
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <i class="fas fa-inbox"></i>
+          <p>No messages here</p>
+          <span>When visitors submit your contact form, messages will appear here.</span>
+        </div>
+      </div>
+
+      <!-- ── VIEW: THREAD (single message + reply) ── -->
+      <div id="viewThread" class="view" style="display:none;">
+        <button class="back-btn" id="backToInbox"><i class="fas fa-arrow-left"></i> Back</button>
+        <div class="thread-wrap" id="threadWrap">
+          <!-- injected by JS -->
+        </div>
+      </div>
+
+      <!-- ── VIEW: SETTINGS ── -->
+      <div id="viewSettings" class="view" style="display:none;">
+        <div class="settings-card">
+          <h3 class="settings-title"><i class="fas fa-user-shield"></i> Admin Credentials</h3>
+          <div class="settings-form">
+            <div class="sf-group">
+              <label>Username</label>
+              <input type="text" id="setUser" placeholder="admin" />
+            </div>
+            <div class="sf-group">
+              <label>New Password</label>
+              <input type="password" id="setPass" placeholder="Enter new password" />
+            </div>
+            <div class="sf-group">
+              <label>Confirm Password</label>
+              <input type="password" id="setPassConfirm" placeholder="Confirm password" />
+            </div>
+            <p class="settings-error" id="settingsError"></p>
+            <p class="settings-success" id="settingsSuccess"></p>
+            <button class="btn-save" id="saveSettings">
+              <i class="fas fa-save"></i> Save Changes
+            </button>
+          </div>
+        </div>
+        <div class="settings-card" style="margin-top:1.5rem;">
+          <h3 class="settings-title"><i class="fas fa-database"></i> Data Management</h3>
+          <p class="settings-info">All messages are stored in your browser's localStorage. Export them as JSON for backup.</p>
+          <div class="data-actions">
+            <button class="btn-export" id="exportBtn"><i class="fas fa-download"></i> Export Messages</button>
+            <button class="btn-danger-sm" id="nukeBtn"><i class="fas fa-trash-alt"></i> Delete All Messages</button>
+          </div>
+        </div>
+        <div class="settings-card" style="margin-top:1.5rem;">
+          <h3 class="settings-title"><i class="fas fa-flask"></i> Test / Demo</h3>
+          <p class="settings-info">Add a batch of sample messages to see the dashboard in action.</p>
+          <button class="btn-export" id="seedBtn"><i class="fas fa-seedling"></i> Seed 5 Sample Messages</button>
+        </div>
+      </div>
+
+    </div><!-- /mainContent -->
+  </div><!-- /dashboard -->
+
+  <script src="admin.js"></script>
+</body>
+</html>
